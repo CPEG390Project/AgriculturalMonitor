@@ -1,0 +1,41 @@
+{% extends 'Monitor/base.html' %}
+
+{% block content %} 
+
+{% load static %}<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+  <title>
+   Sign Up
+  </title>
+  <link href='{% static "assets/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet"/>
+  <link href='{% static "assets/css/styles.min.css" %}' rel="stylesheet"/>
+ </head>
+ <body>
+
+	 
+<form method="POST">
+<h1>Create an Account</h1>
+
+ <a class="already" href="/Monitor/login.html">
+      You already have an account? Login here.
+     </a>
+<br>
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+
+
+<button type="submit"> Sign Up </button>
+ </form>
+    
+{% endblock %}   
+</body>
+</html>
+
+
+

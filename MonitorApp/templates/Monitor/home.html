@@ -1,0 +1,132 @@
+{%if user.is_authenticated %}
+
+Logged In as {{ user.username }}
+
+{% endif %}
+
+{% load static %}
+<html>
+ <body>
+  <p>
+   {% load static %}
+   <!DOCTYPE html>
+  </p>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport"/>
+  <title>
+   Home - AgriMonitor
+  </title>
+  <link href='{% static "MonitorApp/bootstrap/css/bootstrap.min.css" %}' rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet"/>
+  <link href='{% static "MonitorApp/fonts/font-awesome.min.css" %}' rel="stylesheet"/>
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="color: rgb(87,129,108);">
+   <div class="container">
+    <a class="navbar-brand" href="#page-top" style="font-family: 'Roboto Slab', serif;border-color: rgb(203,96,99);color: rgb(207,216,136);">
+     Agricultural Monitor
+    </a>
+       
+       <form action="{% url 'logoutuser' %}" method="POST">  
+         {% csrf_token %}
+
+       <button style="background-color: rgb(216,225,140);" type="submit"> Log Out </button>
+
+      </form>
+
+
+     </ul>
+
+    </div>
+   </div>
+  </nav>
+  
+  <header class="masthead text-white text-center" style="background: url({% static 'MonitorApp/img/greenhouse.jpg' %}) center; background-repeat: no-repeat;">
+   <div class="container">
+    <div class="intro-text">
+     <div class="intro-lead-in">
+      <span style="color: rgb(0,0,0);">
+        <h1>
+       Welcome To Your Studio!
+      </span>
+     </div>
+     <div class="intro-heading text-uppercase">
+      <span style="color: rgb(0,0,0);">
+       Choose Your Plant
+      </span>
+      </h1>
+     </div>
+     <div class="dropdown">
+      <button aria-expanded="false" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" style="width: 100px;height: 50px;background-color: rgb(203,96,99);" type="button">
+       Plants
+      </button>
+      <div class="dropdown-menu" role="menu">
+       <a class="dropdown-item" href="{% url 'testChoice' %}" role="presentation">
+        Test Variable
+       </a>
+       <a class="dropdown-item" href="#" role="presentation">
+        Tomato
+       </a>
+       <a class="dropdown-item" href="#" role="presentation">
+        Mushroom
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </header>
+  <section id="services">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12 text-center">
+      <h2 class="text-uppercase section-heading">
+       Services
+      </h2>
+      <h3 class="text-muted section-subheading">
+       Check out ThingSpeak!
+      </h3>
+      <!--ADD THINGSPEAK HERE IF POSSIBLE!-->
+     </div>
+    </div>
+    <div class="row text-center">
+    </div>
+   </div>
+  </section>
+  <section id="services-1">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12 text-center">
+      <h2 class="text-uppercase section-heading">
+       Here at the Agricultural Monitor we help you help the plants you love stay healthy and happy!
+      </h2>
+      <p class="section-subheading">
+       Like humans, plants needs specific temperatures and environmental factors to be healthy! But while humans can move away or cover up when they are cold, plants need a little extra help.
+       So for example, the ideal climate for a blushing roses is 27C with a relative humidity of 60-70%, while the delicate Dahlias' require humid environments with temperatures ranging from 20 to 22C in the morning and 15 to 17 in the night!
+      We offer you three choices: A generalized test where you can input your own maximum temperature, and two default plants.  
+      </p>
+     </div>
+<!--
+    </div>
+    <div class="row text-center">
+     <div class="col">
+-->
+      <picture>
+       <img src='{% static "MonitorApp/img/wild.jpeg" %}' center  style="opacity: 0.79;filter: blur(0px) brightness(92%) contrast(132%);"/>
+      </picture>
+<!--
+     </div>
+    </div>
+   </div>
+-->
+  </section>
+  <script src='{% static "MonitorApp/js/jquery.min.js" %}'>
+  </script>
+  <script src='{% static "MonitorApp/bootstrap/js/bootstrap.min.js" %}'>
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js">
+  </script>
+  <script src='{% static "MonitorApp/js/agency.js" %}'>
+  </script>
+ </body>
+</html>

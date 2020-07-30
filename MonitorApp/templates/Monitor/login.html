@@ -1,0 +1,21 @@
+{% extends 'Monitor/base.html' %}
+
+{% block content %} 
+
+<form method="POST">
+  
+<h1>Login</h1>
+
+ <a class="none" href="/Monitor/signupuser.html">
+      You don't have an account? Sign up here.
+     </a>
+<br>
+
+{% csrf_token %}
+
+{{ form.as_p }}
+
+<button type="submit"> Login </button>
+ </form>
+    
+{% endblock %}  
